@@ -2,11 +2,7 @@ import numpy as np
 import networkx as nx
 
 def vizinhos(num_quad, num_analise):
-    linhas = []
-    for n in range(1, num_quad ** 2, num_quad):
-        linha = list(range(n, n + num_quad))
-        linhas.append(linha)
-    sudoku = np.array(linhas)
+    sudoku = np.arange(1, num_quad**2 + 1).reshape(num_quad, num_quad)
 
     # Encontre a posição (linha e coluna) do número na matriz
     posicao = np.where(sudoku == num_analise)

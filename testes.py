@@ -1,5 +1,5 @@
-from coloracao import coloracao_por_vertice
+from coloracao import coloracao_por_vertice, dicionario_cores
 from funcoes import dicionario
 
 grafo = dicionario(9)
-print(coloracao_por_vertice(grafo))
+print(dicionario_cores(coloracao_por_vertice(grafo)))

@@ -1,14 +1,27 @@
 def coloracao_por_vertice(grafo):
-    cores = {}
+    cores = {} 
 
-    # Loop sobre todos os vértices do grafo
     for vertice in grafo:
-        cores_disponiveis = set(range(1, int(len(grafo) ** 0.5) + 1))  # Conjunto de cores disponíveis
-        for vizinho in grafo[vertice]:
-            if vizinho in cores:
-                cores_disponiveis.discard(cores[vizinho])  # Remova cores usadas pelos vizinhos
-        if cores_disponiveis:
-            cor = min(cores_disponiveis)  # Atribua a menor cor disponível
-            cores[vertice] = cor
+        vizinhos = grafo[vertice]
+        print(vizinhos) 
+
+        cores_vizinhos = set(cores.get(v, None) for v in vizinhos)
+
+        # Encontre a menor cor não usada pelos vizinhos
+        cor = 0
+        while cor in cores_vizinhos:
+            cor += 1
+
+        cores[vertice] = cor
 
     return cores
+
+def dicionario_cores(cores):
+    grupos = {}
+    
+    for vertice, cor in cores.items():
+        if cor not in grupos:
+            grupos[cor] = []
+        grupos[cor].append(vertice)
+    
+    return grupos
