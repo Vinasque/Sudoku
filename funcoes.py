@@ -46,5 +46,3 @@ def dicionario(n_quad):
         grafo_dicionario[vertice] = vizinhos_vertice
 
     return grafo_dicionario
-
-print(dicionario(4))

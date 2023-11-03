@@ -37,6 +37,3 @@ def grafo(n_quad, nome):
     plt.axis('off')
     plt.savefig(nome)
     plt.show()
-
-# Área de testes
-grafo(4, "4x4.svg")
