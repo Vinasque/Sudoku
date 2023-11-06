@@ -3,7 +3,6 @@ def coloracao_por_vertice(grafo):
 
     for vertice in grafo:
         vizinhos = grafo[vertice]
-        print(vizinhos) 
 
         cores_vizinhos = set(cores.get(v, None) for v in vizinhos)
 
