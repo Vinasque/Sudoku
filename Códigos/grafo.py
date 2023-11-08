@@ -29,7 +29,7 @@ def grafo(n_quad, nome):
     vertices_cores_borda = ['black'] * len(G.nodes())
 
     # O formato do grafo personalizado
-    plt.figure(figsize=(200, 200))
+    plt.figure(figsize=(280, 280))
     nx.draw(G, posicao, with_labels = True, node_color = vertices_cores, edge_color='black', node_size=500, font_weight='bold')
     nx.draw_networkx_edges(G, posicao, edgelist = G.edges(), edge_color='black', width=2)  # Desenhe as arestas novamente para que fiquem acima dos nós
     nx.draw_networkx_nodes(G, posicao, node_color = 'white', node_size = 500, node_shape = 'o', edgecolors = vertices_cores_borda, linewidths = 2)
@@ -37,5 +37,3 @@ def grafo(n_quad, nome):
     plt.axis('off')
     plt.savefig(nome)
     plt.show()
-
-grafo(49, "49x49.svg")
